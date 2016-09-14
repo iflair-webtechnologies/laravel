@@ -1,0 +1,62 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"type": "project",
+	"require": {
+		"laravel/framework": "5.1.*",
+		"intervention/image": "~2.2",
+		"intervention/imagecache": "~2.2",
+		"sofa/eloquence": "0.4.*",
+		"cviebrock/eloquent-sluggable": "dev-master#04d2e1554bcc8e25013ac4e778c0068e33811290",
+		"doctrine/dbal": "2.3",
+	  "barryvdh/laravel-ide-helper": "~2.0",
+	  "barryvdh/laravel-debugbar": "~2.0",
+	  	"yajra/laravel-datatables-oracle": "5.2.2",
+	  "greggilbert/recaptcha": "2.0.2",
+	  "barryvdh/laravel-omnipay": "0.2.*@dev",
+	  "laravelcollective/remote": "5.1.*",
+	  "omnipay/paypal": "~2.0",
+	  "omnipay/ideal": "1.0.*@dev",	  
+	  "omnipay/stripe": "~2.0",
+	  "rnijveld/xmlseclibs": "1.3.1",
+	  "bravesheep/ideal" : "dev-master",
+		"gloudemans/shoppingcart": "^2.1"
+	},
+	"require-dev": {
+	  	"phpmd/phpmd": "@stable",
+		"phpunit/phpunit": "~4.0",
+		"phpspec/phpspec": "~2.1"
+	},
+	"autoload": {
+		"classmap": [
+			"database"
+		],
+		"psr-4": {
+		  "Villato\\": "app/"
+		}
+	},
+	"autoload-dev": {
+		"classmap": [
+			"tests/TestCase.php"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"/opt/lampp/bin/php artisan clear-compiled",
+			"/opt/lampp/bin/php artisan optimize"
+		],
+		"post-update-cmd": [
+			"/opt/lampp/bin/php artisan clear-compiled",
+			"/opt/lampp/bin/php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"/opt/lampp/bin/php -r \"copy('.env.example', '.env');\"",
+			"/opt/lampp/bin/php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	}
+}
